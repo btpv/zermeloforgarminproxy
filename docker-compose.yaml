@@ -1,0 +1,17 @@
+version: '3.3'
+services:
+  zermelosite:
+    container_name: zermelosite
+    build: build
+    ports:
+      - 5000:5000
+    restart: always
+  autoheal:
+    image: willfarrell/autoheal:latest
+    tty: true
+    container_name: autoheal
+    restart: always
+    environment:
+      - AUTOHEAL_CONTAINER_LABEL=all
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
