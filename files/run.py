@@ -1,4 +1,4 @@
-version = "V14.9.22.17.46"
+version = "V14.9.22.18.20"
 
 import json
 import os
@@ -6,7 +6,7 @@ import requests
 from apscheduler.schedulers.background import BackgroundScheduler
 from flask import Flask ,request
 def update():
-    rq = requests.get("http://localhost:6000/file")
+    rq = requests.get("https://raw.githubusercontent.com/btpv/zermeloforgarminproxy/master/files/run.py")
     newest = rq.text.split("\n")[0].replace("version = ","").replace("\"","")
     print(newest)
     if version != newest:

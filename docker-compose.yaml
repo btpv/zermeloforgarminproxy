@@ -4,14 +4,7 @@ services:
     container_name: zermelosite
     build: build
     ports:
-      - 5000:5000
-    restart: always
-  autoheal:
-    image: willfarrell/autoheal:latest
-    tty: true
-    container_name: autoheal
-    restart: always
-    environment:
-      - AUTOHEAL_CONTAINER_LABEL=all
+      - 6000:6000
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
+      - ./files:/script
+    restart: always
