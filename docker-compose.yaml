@@ -1,7 +1,7 @@
 version: '3.3'
 services:
-  zermelosite:
-    container_name: zermelosite
+  zermeloforgarminproxy:
+    container_name: zermeloforgarminproxy
     build: build
     ports:
       - 6000:6000
