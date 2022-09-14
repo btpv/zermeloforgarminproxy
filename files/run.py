@@ -31,12 +31,6 @@ def treat_as_plain_text(response):
     response.headers["Content-Type"] = "application/json; charset=utf-8"
     return response
 
-@app.route("/file")
-def file():
-    with open("/home/borro/Dev/zermelogarmin/zermeloforgarmin/proxy/build/files/run copy.py") as f:
-        file = f.read()
-    return file
-
 @app.route("/",methods=['POST'])
 def main():
     data = json.loads(request.get_data())
